@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+  </ion-buttons>
+
+    <ion-title color="primary">avatar</ion-title>
+    
+    <ion-buttons class="topRightAvatar" slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/avatar.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+
+  <ion-chip color="primary" outline="true"  *ngFor="let character of characters | async">
+    <ion-avatar>
+      <ion-img src="{{ character.image }}"></ion-img>
+    </ion-avatar>
+    <ion-label>{{ character.name }}</ion-label>
+  </ion-chip>
+    
+
+  <ion-list>
+    <ion-item *ngFor="let character of characters | async">
+      <ion-avatar slot="start">
+        <img src="{{ character.image }}" />
+      </ion-avatar>
+      <ion-label>{{ character.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+
+
+</ion-content>

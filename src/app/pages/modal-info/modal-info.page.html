@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ platform + ' - ' + UID  }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-button (click)="leaveWithoutArguments()" expand="block">
+    Close Modal
+  </ion-button>
+
+  <ion-button (click)="leaveWithArguments()" expand="block">
+    Close Modal - Arguments
+  </ion-button>
+
+</ion-content>

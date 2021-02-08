@@ -1,0 +1,26 @@
+<app-header title="Search"></app-header>
+
+<ion-content>
+  <ion-searchbar 
+    placeholder="Search Character" 
+    animated
+    inputmode="text"
+    [debounce]="250" 
+    (ionChange)="onSearchChange($event)">
+  </ion-searchbar>
+
+  <ion-list>
+    
+    <ion-item *ngFor="let character of characters | charFilter:searchBarText:'name'">
+      <ion-avatar slot="start">
+        <img [src]="character.image" />
+      </ion-avatar>
+      <ion-label>
+        <h3>{{  character.name  }}</h3>
+        <p>{{  character.gender  }}</p>
+      </ion-label>
+      <ion-label slot="end" class="ion-text-end text-small">{{  character.status  }}</ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

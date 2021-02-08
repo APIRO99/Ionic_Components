@@ -1,0 +1,11 @@
+<app-header title="Alert"></app-header>
+
+<ion-content>
+
+  <ion-button 
+    *ngFor="let button of buttons"
+      (click)="button.callback()" 
+      expand="block">
+    {{  button.text  }}
+  </ion-button>
+</ion-content>
